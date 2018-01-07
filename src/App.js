@@ -30,18 +30,22 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  changeType(x){
+    this.setState({format: x}, this.getSampleText)
+  }
 
   render() {
     return (
       <div className="App container">
-      <h1>ReactJS Sample text Generator</h1>
-      <hr />
-      <form class='form-inline' >
-        <div className='form-group'>
-          <label>Include HTML:</label>
-        </div>
-      </form> 
-       <Output value={this.state.text}/>
+        <h1>ReactJS Sample text Generator</h1>
+        <hr />
+      <form className='form-inline' >
+         <div className='form-group'>
+            <label>Format Type:</label>
+            <Select value={this.state.format} onChange={this.changeType.bind(this)}/>
+          </div>
+       </form> 
+         <Output value={this.state.text}/>
       </div>
     );
   }

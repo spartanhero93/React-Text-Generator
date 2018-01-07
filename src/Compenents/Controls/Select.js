@@ -15,13 +15,15 @@ class Select extends Component {
   }
 
   render() {
-    return 
+    return (
     <div>
       <select className='form-control' onChange={this.onChange.bind(this)}>
-        <option value='true'>Yes</option>
-        <option value='false'>No</option>
+        <option value='text'>text</option>
+        <option value='html'>html</option>
+        <option value='html'>json</option>
       </select>
-    </div>;
+    </div>
+    )
   }
 }
 export default Select;
